@@ -1,0 +1,145 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXFileReference section */
+		D80F67C924B0F6D600487149 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		D80F67CA24B0F6D600487149 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		D80F67CB24B0F6D600487149 /* HVPRootListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HVPRootListController.m; sourceTree = "<group>"; };
+		D80F67CC24B0F6D600487149 /* entry.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = entry.plist; sourceTree = "<group>"; };
+		D80F67CD24B0F6D600487149 /* HVPRootListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HVPRootListController.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		D80F67C324B0F6D600487149 = {
+			isa = PBXGroup;
+			children = (
+				D80F67C924B0F6D600487149 /* Makefile */,
+				D80F67CA24B0F6D600487149 /* Resources */,
+				D80F67CB24B0F6D600487149 /* HVPRootListController.m */,
+				D80F67CC24B0F6D600487149 /* entry.plist */,
+				D80F67CD24B0F6D600487149 /* HVPRootListController.h */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		D80F67C824B0F6D600487149 /* prefs */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = D80F67CE24B0F6D600487149 /* Build configuration list for PBXLegacyTarget "prefs" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = /Users/tomicasagrande/Downloads/hv/prefs;
+			dependencies = (
+			);
+			name = prefs;
+			passBuildSettingsInEnvironment = 1;
+			productName = prefs;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		D80F67C424B0F6D600487149 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = D80F67C724B0F6D600487149 /* Build configuration list for PBXProject "prefs" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D80F67C324B0F6D600487149;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D80F67C824B0F6D600487149 /* prefs */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		D80F67C524B0F6D600487149 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		D80F67C624B0F6D600487149 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		D80F67CF24B0F6D600487149 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = prefs;
+			};
+			name = Debug;
+		};
+		D80F67D024B0F6D600487149 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = prefs;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D80F67C724B0F6D600487149 /* Build configuration list for PBXProject "prefs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D80F67C524B0F6D600487149 /* Debug */,
+				D80F67C624B0F6D600487149 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D80F67CE24B0F6D600487149 /* Build configuration list for PBXLegacyTarget "prefs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D80F67CF24B0F6D600487149 /* Debug */,
+				D80F67D024B0F6D600487149 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D80F67C424B0F6D600487149 /* Project object */;
+}

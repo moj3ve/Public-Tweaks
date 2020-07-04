@@ -1,0 +1,9 @@
+Package: com.samoht.hv
+Name: HV
+Depends: mobilesubstrate
+Version: 1.0
+Architecture: iphoneos-arm
+Description: haptic your volume
+Maintainer: samoht
+Author: samoht
+Section: Tweaks
