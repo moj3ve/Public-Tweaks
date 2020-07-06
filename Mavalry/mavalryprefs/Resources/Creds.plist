@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+
+        
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string></string>
+		</dict>
+
+        <!-- jaidan's cell -->
+        <dict>
+            <key>cell</key>
+            <string>PSButtonCell</string>
+            <key>icon</key>
+            <string>github.png</string>
+            <key>action</key>
+            <string>ajaidanLink</string>
+            <key>cellClass</key>
+            <string>BRUHSubtitleCell</string>
+            <key>label</key>
+            <string>Jaidan A</string>
+            <key>details</key>
+            <string>Tweak</string>
+        </dict>
+
+        <!-- samoht's cell -->
+        <dict>
+            <key>cell</key>
+            <string>PSButtonCell</string>
+            <key>icon</key>
+            <string>reddit.png</string>
+            <key>action</key>
+            <string>samohtLink</string>
+            <key>cellClass</key>
+            <string>BRUHSubtitleCell</string>
+            <key>label</key>
+            <string>samoht</string>
+            <key>details</key>
+            <string>Artworks and Volume Haptics</string>
+        </dict>
+
+        <!-- andy's cell -->
+        <dict>
+            <key>cell</key>
+            <string>PSButtonCell</string>
+            <key>icon</key>
+            <string>github.png</string>
+            <key>action</key>
+            <string>andyLink</string>
+            <key>cellClass</key>
+            <string>BRUHSubtitleCell</string>
+            <key>label</key>
+            <string>Andrew Wiik</string>
+            <key>details</key>
+            <string>Slider Percentages</string>
+        </dict>
+
+        <!-- Sponsors label -->
+        <dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Sponsors</string>
+		</dict>
+
+        <!-- wildfire's cell -->
+        <dict>
+            <key>cell</key>
+            <string>PSButtonCell</string>
+            <key>icon</key>
+            <string>creds.png</string>
+            <key>action</key>
+            <string>wildfireLink</string>
+            <key>cellClass</key>
+            <string>BRUHSubtitleCell</string>
+            <key>label</key>
+            <string>Wildfire</string>
+            <key>details</key>
+            <string>Click on this to bring you to their website!</string>
+        </dict>
+
+    </array>
+	<key>title</key>
+	<string>Credits</string>
+</dict>
+</plist>
