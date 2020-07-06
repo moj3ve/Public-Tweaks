@@ -21,12 +21,11 @@ static void loadPrefs() {
 	enabled = [prefs objectForKey:@"enabled"] ? [[prefs objectForKey:@"enabled"] boolValue] : YES;
 }
 
-%hook SBVolumeHardwareButton 
+%group HV
+%hook SBVolumeControl
 
-- (void)​volumeIncreasePress:(id) {
+- (void)increaseVolume {
 	
-	if (enabled) {
-
 		UIImpactFeedbackGenerator *hapt = [[UIImpactFeedbackGenerator alloc] init];
 		[hapt prepare];
 
@@ -51,9 +50,7 @@ static void loadPrefs() {
 
 }
 
-- (void)​volumeDecreasePress:(id) {
-	
-	if (enabled) {
+- (void)decreaseVolume {
 
 		UIImpactFeedbackGenerator *hapt = [[UIImpactFeedbackGenerator alloc] init];
 		[hapt prepare];
@@ -105,9 +102,14 @@ static void loadPrefs() {
 }
 
 %end
+%end
 
 %ctor {
     loadPrefs();
     CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPrefs, CFSTR("com.samoht.hvprefs.settingschanged"), NULL, CFNotificationSuspensionBehaviorCoalesce);
+
+	if (enabled) {
+		%init(HV);
+	}
 
 }
