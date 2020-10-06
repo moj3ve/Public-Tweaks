@@ -30,7 +30,7 @@
 			<key>label</key>
 			<string>Hide Icon Labels</string>
 			<key>PostNotification</key>
-			<string>com.ajaidan.mavalryprefs.settingschanged</string>
+			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
 		</dict>
 
 		<!-- enable/disable button -->
@@ -52,7 +52,7 @@
 			<key>label</key>
 			<string>Hide Folder Background</string>
 			<key>PostNotification</key>
-			<string>com.ajaidan.mavalryprefs.settingschanged</string>
+			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
 		</dict>
 
 		<!-- enable/disable page dots button -->
@@ -74,7 +74,7 @@
 			<key>label</key>
 			<string>Hide Page Dots</string>
 			<key>PostNotification</key>
-			<string>com.ajaidan.mavalryprefs.settingschanged</string>
+			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
 		</dict>
 
 		<!-- enable/disable transparent dock button -->
@@ -96,7 +96,7 @@
 			<key>label</key>
 			<string>Transparent Dock</string>
 			<key>PostNotification</key>
-			<string>com.ajaidan.mavalryprefs.settingschanged</string>
+			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
 		</dict>
 
 		<!-- enable/disable hiding wantsHomeBar -->
@@ -118,7 +118,7 @@
 			<key>label</key>
 			<string>Hide Home Bar</string>
 			<key>PostNotification</key>
-			<string>com.ajaidan.mavalryprefs.settingschanged</string>
+			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -139,7 +139,7 @@
 			<key>label</key>
 			<string>Hide Today View</string>
 			<key>PostNotification</key>
-			<string>com.ajaidan.mavalryprefs.settingschanged</string>
+			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -160,7 +160,7 @@
 			<key>label</key>
 			<string>Remove Spotlight Search</string>
 			<key>PostNotification</key>
-			<string>com.ajaidan.mavalryprefs.settingschanged</string>
+			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
 		</dict>
 	</array>
 	<key>title</key>

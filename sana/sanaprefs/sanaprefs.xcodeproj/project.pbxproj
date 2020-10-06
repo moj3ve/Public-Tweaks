@@ -1,0 +1,155 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXFileReference section */
+		D87C98B924CFEEC700781072 /* SANSubtitleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SANSubtitleCell.m; sourceTree = "<group>"; };
+		D87C98BA24CFEEC700781072 /* .DS_Store */ = {isa = PBXFileReference; lastKnownFileType = file; path = .DS_Store; sourceTree = "<group>"; };
+		D87C98BB24CFEEC700781072 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		D87C98BC24CFEEC700781072 /* layout */ = {isa = PBXFileReference; lastKnownFileType = folder; path = layout; sourceTree = "<group>"; };
+		D87C98BD24CFEEC700781072 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		D87C98BE24CFEEC700781072 /* SANRootListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SANRootListController.h; sourceTree = "<group>"; };
+		D87C98BF24CFEEC700781072 /* SANSubtitleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SANSubtitleCell.h; sourceTree = "<group>"; };
+		D87C98C024CFEEC700781072 /* SANRootHeaderView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SANRootHeaderView.mm; sourceTree = "<group>"; };
+		D87C98C124CFEEC700781072 /* SANRootHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SANRootHeaderView.h; sourceTree = "<group>"; };
+		D87C98C224CFEEC700781072 /* SANRootListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SANRootListController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		D87C98B324CFEEC700781072 = {
+			isa = PBXGroup;
+			children = (
+				D87C98B924CFEEC700781072 /* SANSubtitleCell.m */,
+				D87C98BA24CFEEC700781072 /* .DS_Store */,
+				D87C98BB24CFEEC700781072 /* Makefile */,
+				D87C98BC24CFEEC700781072 /* layout */,
+				D87C98BD24CFEEC700781072 /* Resources */,
+				D87C98BE24CFEEC700781072 /* SANRootListController.h */,
+				D87C98BF24CFEEC700781072 /* SANSubtitleCell.h */,
+				D87C98C024CFEEC700781072 /* SANRootHeaderView.mm */,
+				D87C98C124CFEEC700781072 /* SANRootHeaderView.h */,
+				D87C98C224CFEEC700781072 /* SANRootListController.m */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		D87C98B824CFEEC700781072 /* sanaprefs */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = D87C98C324CFEEC700781072 /* Build configuration list for PBXLegacyTarget "sanaprefs" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = /Users/tomicasagrande/tweaks/C/sana/sanaprefs;
+			dependencies = (
+			);
+			name = sanaprefs;
+			passBuildSettingsInEnvironment = 1;
+			productName = sanaprefs;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		D87C98B424CFEEC700781072 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = D87C98B724CFEEC700781072 /* Build configuration list for PBXProject "sanaprefs" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D87C98B324CFEEC700781072;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D87C98B824CFEEC700781072 /* sanaprefs */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		D87C98B524CFEEC700781072 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		D87C98B624CFEEC700781072 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		D87C98C424CFEEC700781072 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = sanaprefs;
+			};
+			name = Debug;
+		};
+		D87C98C524CFEEC700781072 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = sanaprefs;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D87C98B724CFEEC700781072 /* Build configuration list for PBXProject "sanaprefs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D87C98B524CFEEC700781072 /* Debug */,
+				D87C98B624CFEEC700781072 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D87C98C324CFEEC700781072 /* Build configuration list for PBXLegacyTarget "sanaprefs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D87C98C424CFEEC700781072 /* Debug */,
+				D87C98C524CFEEC700781072 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D87C98B424CFEEC700781072 /* Project object */;
+}

@@ -1,5 +1,6 @@
 #import "Mavalry.h"
 #import <spawn.h>
+#import <Cephei/HBPreferences.h>
 
 // Check if tweak is set up
 %hook SBLockScreenManager
@@ -15,10 +16,27 @@
 		return %orig;
 	}
 }
+
+%end
+
+%group ReachTimer
+%hook SBReachabilityManager
+
+-(void)_setKeepAliveTimer {}
+
+%end
+%end
+
+%group ReachChevron
+%hook SBReachabilityBackgroundView
+
+-(void)_setupChevron {}
+-(void)_updateChevronPathForUpFraction:(double)arg1 {}
+
+%end
 %end
 
 %group LSnoToday
-
 %hook SBMainDisplayPolicyAggregator
 
 -(BOOL)_allowsCapabilityLockScreenTodayViewWithExplanation:(id*)arg1 {
@@ -136,85 +154,28 @@
 %end
 %end
 
-%group CCPercentage
-%hook CCUIBaseSliderView
-%property (nonatomic, retain) UILabel *percentLabel;
-
-- (id)initWithFrame:(CGRect)frame {
-	CCUIBaseSliderView *orig = %orig;
-	orig.percentLabel = [[UILabel alloc] init];
-	orig.percentLabel.textColor = [UIColor whiteColor];
-	orig.percentLabel.text = @"0%";
-	orig.percentLabel.center = CGPointMake(self.bounds.size.width*0.5, self.bounds.size.height*0.85);
-	[orig addSubview:orig.percentLabel];
-	orig.percentLabel.layer.allowsGroupBlending = NO;
-	orig.percentLabel.layer.allowsGroupOpacity = YES;
-	orig.percentLabel.layer.compositingFilter = kCAFilterDestOut;
-	orig.percentLabel.font = [orig.percentLabel.font fontWithSize:(CCLabelsSize)];
-	return orig;
-}
-
-- (void)layoutSubviews {
-	%orig;
-
-	if ([self valueForKey:@"_glyphPackageView"]) {
-		UIView *glyphView = (UIView *)[self valueForKey:@"_glyphPackageView"];
-		glyphView.center = CGPointMake(self.bounds.size.width*0.5,self.bounds.size.height*0.5);
-		if (self.percentLabel) {
-			if ([self.percentLabel superview] != glyphView) {
-				if ([self.percentLabel superview]) [self.percentLabel removeFromSuperview];
-				[glyphView addSubview:self.percentLabel];
-			}
-
-			if ([self.percentLabel superview] == glyphView) {
-				self.percentLabel.layer.allowsGroupBlending = NO;
-				self.percentLabel.layer.allowsGroupOpacity = YES;
-				self.percentLabel.layer.compositingFilter = kCAFilterDestOut;
-				self.percentLabel.text = [[NSString stringWithFormat:@"%.f", [self value]*100] stringByAppendingString:@"%"];
-				[self.percentLabel sizeToFit];
-				self.percentLabel.center = [self convertPoint:CGPointMake(self.bounds.size.width*0.5, self.bounds.size.height*0.85) toView:glyphView];
-
-			}
-
-		if ([self valueForKey:@"_compensatingGlyphPackageView"]) {
-			UIView *compensatingGlyphView = [self valueForKey:@"_compensatingGlyphPackageView"];
-			compensatingGlyphView.center = glyphView.center;
-
-		}
-	}
-}
-}
-%end
-%end
-
 %group Screenshot
 %hook SpringBoard
+
 -(void)takeScreenshot {
 
 	%orig;
-
 	UIImpactFeedbackGenerator *hapt = [[UIImpactFeedbackGenerator alloc] init];
 	[hapt prepare];
-
+			
 	if (screenshotPref == 1) {
-		hapt = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleMedium]; //Medium feedback
+		hapt = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleLight]; //Light feedback
 
 	} else if (screenshotPref == 2) {
 		hapt = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleMedium]; //Medium feedback
 
 	} else if (screenshotPref == 3) {
 		hapt = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleHeavy]; //Heavy feedback
-
-	} else if (screenshotPref == 4) {
-		hapt = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleSoft]; //Soft feedback
-
-	} else if (screenshotPref == 5) {
-		hapt = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleRigid]; //Rigid feedback
-
 	}
-			
 	[hapt impactOccurred];
+	
 }
+
 %end
 %end
 
@@ -224,38 +185,9 @@
 - (void)increaseVolume {
 
 	%orig;
-
 	UIImpactFeedbackGenerator *hapt = [[UIImpactFeedbackGenerator alloc] init];
 	[hapt prepare];
-
-	if (hapticPref == 1) {
-		hapt = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleMedium]; //Medium feedback
-
-	} else if (hapticPref == 2) {
-		hapt = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleMedium]; //Medium feedback
-
-	} else if (hapticPref == 3) {
-		hapt = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleHeavy]; //Heavy feedback
-
-	} else if (hapticPref == 4) {
-		hapt = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleSoft]; //Soft feedback
-
-	} else if (hapticPref == 5) {
-		hapt = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleRigid]; //Rigid feedback
-
-	}
 			
-	[hapt impactOccurred];
-	
-}
-
-- (void)decreaseVolume {
-
-	%orig;
-
-	UIImpactFeedbackGenerator *hapt = [[UIImpactFeedbackGenerator alloc] init];
-	[hapt prepare];
-
 	if (hapticPref == 1) {
 		hapt = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleLight]; //Light feedback
 
@@ -264,15 +196,26 @@
 
 	} else if (hapticPref == 3) {
 		hapt = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleHeavy]; //Heavy feedback
-
-	} else if (hapticPref == 4) {
-		hapt = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleSoft]; //Soft feedback
-
-	} else if (hapticPref == 5) {
-		hapt = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleRigid]; //Rigid feedback
-
 	}
+	[hapt impactOccurred];
+	
+}
+
+- (void)decreaseVolume {
+
+	%orig;
+	UIImpactFeedbackGenerator *hapt = [[UIImpactFeedbackGenerator alloc] init];
+	[hapt prepare];
 			
+	if (hapticPref == 1) {
+		hapt = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleLight]; //Light feedback
+
+	} else if (hapticPref == 2) {
+		hapt = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleMedium]; //Medium feedback
+
+	} else if (hapticPref == 3) {
+		hapt = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleHeavy]; //Heavy feedback
+	}
 	[hapt impactOccurred];
 	
 }
@@ -294,22 +237,39 @@
 // Loads prefs and inits
 %ctor {
 	%init;
-	loadPrefs();
-	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPrefs, CFSTR("com.ajaidan.mavalryprefs.settingschanged"), NULL, CFNotificationSuspensionBehaviorCoalesce);
-		if (isEnabled) {
-			if (moonGone) %init(DNDNotifs);
-			if (wantsHiddenLabels) %init(HideLabels);
-			if (wantsHiddenPageDots) %init(PageDots);
-			if (wantsTransparentDock) %init(DockBG);
-			if (hideFolderBackground) %init(FolderBG);
-			if (wantsOlderNotifs) %init(OlderNotifs);
-			if (wantsHomeBar) %init(HomeBar);
-			if (wantsCCLabels) %init(CCPercentage);
-			if (noTodayHS) %init(HSnoToday);
-			if (noTodayLS) %init(LSnoToday);
-			if (wantsHapticScreenshot) %init(Screenshot);
-			if (wantsHapticVol) %init(HapticVolume);
-			if (volumePref != 0.0) %init(VolumeStep);
-			if (noSpotlight) %init(HSnoSpotlight);
-		}
+	HBPreferences *preferences = [[HBPreferences alloc] initWithIdentifier:@"com.ajaidan.mavalryprefs"];
+	[preferences registerBool:&isEnabled default:NO forKey:@"isEnabled"];
+	[preferences registerBool:&moonGone default:NO forKey:@"moonGone"];
+	[preferences registerBool:&wantsHiddenLabels default:NO forKey:@"wantsHiddenLabels"];
+	[preferences registerBool:&wantsTransparentDock default:NO forKey:@"wantsTransparentDock"];
+	[preferences registerBool:&hideFolderBackground default:NO forKey:@"hideFolderBackground"];
+	[preferences registerBool:&wantsOlderNotifs default:NO forKey:@"wantsOlderNotifs"];
+	[preferences registerBool:&wantsHomeBar default:NO forKey:@"wantsHomeBar"];
+	[preferences registerBool:&noTodayHS default:NO forKey:@"noTodayHS"];
+	[preferences registerBool:&noTodayLS default:NO forKey:@"noTodayLS"];
+	[preferences registerBool:&wantsHapticScreenshot default:YES forKey:@"wantsHapticScreenshot"];
+	[preferences registerBool:&wantsHapticVol default:NO forKey:@"wantsHapticVol"];
+	[preferences registerBool:&noSpotlight default:NO forKey:@"noSpotlight"];
+	[preferences registerBool:&reachChevron default:NO forKey:@"reachChevron"];
+	[preferences registerBool:&reachTimer default:NO forKey:@"reachTimer"];
+	[preferences registerFloat:&hapticPref default:1 forKey:@"hapticPref"];
+	[preferences registerFloat:&volumePref default:0 forKey:@"volumePref"];
+	[preferences registerFloat:&screenshotPref default:1 forKey:@"screenshotPref"];
+	if (isEnabled) {
+		if (moonGone) %init(DNDNotifs); else {}
+		if (wantsHiddenLabels) %init(HideLabels); else {}
+		if (wantsHiddenPageDots) %init(PageDots); else {}
+		if (wantsTransparentDock) %init(DockBG); else {}
+		if (hideFolderBackground) %init(FolderBG); else {}
+		if (wantsOlderNotifs) %init(OlderNotifs); else {}
+		if (wantsHomeBar) %init(HomeBar); else {}
+		if (noTodayHS) %init(HSnoToday); else {}
+		if (noTodayLS) %init(LSnoToday); else {}
+		if (wantsHapticScreenshot) %init(Screenshot); else {}
+		if (wantsHapticVol) %init(HapticVolume); else {}
+		if (volumePref != 0.0) %init(VolumeStep); else {}
+		if (noSpotlight) %init(HSnoSpotlight); else {}
+		if (reachChevron) %init(ReachChevron) else {}
+		if (reachTimer) %init(ReachTimer) else {}
+	} else {}
 }

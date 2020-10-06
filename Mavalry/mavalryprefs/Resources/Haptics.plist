@@ -33,7 +33,7 @@
 			<key>label</key>
 			<string>Haptic Volume Buttons</string>
 			<key>PostNotification</key>
-			<string>com.ajaidan.mavalryprefs.settingschanged</string>
+			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
 		</dict>
 
 		<!-- haptics cell -->
@@ -51,21 +51,17 @@
 				<integer>1</integer>
 				<integer>2</integer>
 				<integer>3</integer>
-				<integer>4</integer>
-				<integer>5</integer>
 			</array>
 			<key>validTitles</key>
 			<array>
 				<string>Light</string>
 				<string>Medium</string>
 				<string>Strong</string>
-				<string>Soft</string>
-				<string>Rigid</string>
 			</array>
 			<key>alignment</key>
 			<string>5</string>
 			<key>PostNotification</key>	
-			<string>com.ajaidan.mavalryprefs.settingschanged</string>
+			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
         </dict>
 
 		<dict>
@@ -97,7 +93,7 @@
 			<key>segmentCount</key>
 			<integer>100</integer>
             <key>PostNotification</key>
-            <string>com.ajaidan.mavalryprefs.settingschanged</string>
+            <string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
         </dict>
 
 		<dict>
@@ -125,7 +121,7 @@
 			<key>label</key>
 			<string>Haptic Screenshot</string>
 			<key>PostNotification</key>
-			<string>com.ajaidan.mavalryprefs.settingschanged</string>
+			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
 		</dict>
 
 		<!-- haptics cell -->
@@ -143,21 +139,17 @@
 				<integer>1</integer>
 				<integer>2</integer>
 				<integer>3</integer>
-				<integer>4</integer>
-				<integer>5</integer>
 			</array>
 			<key>validTitles</key>
 			<array>
 				<string>Light</string>
 				<string>Medium</string>
 				<string>Strong</string>
-				<string>Soft</string>
-				<string>Rigid</string>
 			</array>
 			<key>alignment</key>
 			<string>5</string>
 			<key>PostNotification</key>	
-			<string>com.ajaidan.mavalryprefs.settingschanged</string>
+			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
         </dict>
 
 	</array>

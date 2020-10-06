@@ -1,0 +1,3 @@
+if [ -f /var/mobile/Library/Preferences/com.ajaidan.mavalryprefs.plist ]; then
+    rm -rf /var/mobile/Library/Preferences/com.ajaidan.mavalryprefs.plist
+fi

@@ -1,10 +1,11 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>items</key>
 	<array>
-		<!-- general cell -->
+
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
@@ -12,7 +13,7 @@
 			<string>General</string>
 		</dict>
 
-		<!-- enable/disable hiding older notifications text -->
+		<!-- Enable/Disable button -->
 		<dict>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
@@ -27,9 +28,9 @@
 			<key>defaults</key>
 			<string>com.ajaidan.mavalryprefs</string>
 			<key>key</key>
-			<string>wantsOlderNotifs</string>
+			<string>reachChevron</string>
 			<key>label</key>
-			<string>Hide Older Notifications Text</string>
+			<string>Remove Reachability Chevron</string>
 			<key>PostNotification</key>
 			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
 		</dict>
@@ -48,36 +49,15 @@
 			<key>defaults</key>
 			<string>com.ajaidan.mavalryprefs</string>
 			<key>key</key>
-			<string>moonGone</string>
+			<string>reachTimer</string>
 			<key>label</key>
-			<string>Hide DND Notification</string>
-			<key>PostNotification</key>
-			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
-		</dict>
-
-		<dict>
-			<key>cell</key>
-			<string>PSSwitchCell</string>
-			<key>default</key>
-			<false/>
-			<key>cellClass</key>
-  			<string>BRUHSwitchCell</string>
-  			<key>switchColor</key>
-  			<string>#9836C5</string>
- 			 <key>switchColorAlpha</key>
-  			<real>1.0</real>
-			<key>defaults</key>
-			<string>com.ajaidan.mavalryprefs</string>
-			<key>key</key>
-			<string>noTodayLS</string>
-			<key>label</key>
-			<string>Hide Today View</string>
+			<string>Remove Reachability Timer</string>
 			<key>PostNotification</key>
 			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
 		</dict>
 
 	</array>
 	<key>title</key>
-	<string>Lockscreen</string>
+	<string>Reachability</string>
 </dict>
 </plist>

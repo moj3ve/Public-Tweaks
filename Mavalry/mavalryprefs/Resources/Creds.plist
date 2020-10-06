@@ -5,7 +5,6 @@
 	<key>items</key>
 	<array>
 
-        
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
@@ -13,55 +12,45 @@
 			<string></string>
 		</dict>
 
-        <!-- jaidan's cell -->
         <dict>
-            <key>cell</key>
-            <string>PSButtonCell</string>
-            <key>icon</key>
-            <string>github.png</string>
-            <key>action</key>
-            <string>ajaidanLink</string>
-            <key>cellClass</key>
-            <string>BRUHSubtitleCell</string>
-            <key>label</key>
-            <string>Jaidan A</string>
-            <key>details</key>
-            <string>Tweak</string>
-        </dict>
+			<key>cellClass</key>
+			<string>HBLinkTableCell</string>
+			<key>label</key>
+			<string>Tweak made by:</string>
+			<key>subtitle</key>
+			<string>ajaidan0</string>
+			<key>icon</key>
+			<string>github.png</string>
+			<key>url</key>
+			<string>https://github.com/ajaidan0</string>
+		</dict>
 
-        <!-- samoht's cell -->
-        <dict>
-            <key>cell</key>
-            <string>PSButtonCell</string>
-            <key>icon</key>
-            <string>reddit.png</string>
-            <key>action</key>
-            <string>samohtLink</string>
-            <key>cellClass</key>
-            <string>BRUHSubtitleCell</string>
-            <key>label</key>
-            <string>samoht</string>
-            <key>details</key>
-            <string>Artworks and Volume Haptics</string>
-        </dict>
+         <dict>
+			<key>cellClass</key>
+			<string>HBLinkTableCell</string>
+			<key>label</key>
+			<string>Artwork and Volume Haptics:</string>
+			<key>subtitle</key>
+			<string>samoht</string>
+			<key>icon</key>
+			<string>reddit.png</string>
+			<key>url</key>
+			<string>https://reddit.com/bobbyboys301</string>
+		</dict>
 
-        <!-- andy's cell -->
-        <dict>
-            <key>cell</key>
-            <string>PSButtonCell</string>
-            <key>icon</key>
-            <string>github.png</string>
-            <key>action</key>
-            <string>andyLink</string>
-            <key>cellClass</key>
-            <string>BRUHSubtitleCell</string>
-            <key>label</key>
-            <string>Andrew Wiik</string>
-            <key>details</key>
-            <string>Slider Percentages</string>
-        </dict>
+		<dict>
+			<key>cellClass</key>
+			<string>HBLinkTableCell</string>
+			<key>label</key>
+			<string>OBWelcomeController:</string>
+			<key>subtitle</key>
+			<string>Simalary (Chris)</string>
+			<key>icon</key>
+			<string>github.png</string>
+			<key>url</key>
+			<string>https://gist.github.com/chrisharper22/17541f484f05542b0ad78a1e334835da</string>
+		</dict>
 
-        <!-- Sponsors label -->
         <dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
@@ -69,21 +58,18 @@
 			<string>Sponsors</string>
 		</dict>
 
-        <!-- wildfire's cell -->
-        <dict>
-            <key>cell</key>
-            <string>PSButtonCell</string>
-            <key>icon</key>
-            <string>creds.png</string>
-            <key>action</key>
-            <string>wildfireLink</string>
-            <key>cellClass</key>
-            <string>BRUHSubtitleCell</string>
-            <key>label</key>
-            <string>Wildfire</string>
-            <key>details</key>
-            <string>Click on this to bring you to their website!</string>
-        </dict>
+       <dict>
+			<key>cellClass</key>
+			<string>HBLinkTableCell</string>
+			<key>label</key>
+			<string>Sponsored by:</string>
+			<key>subtitle</key>
+			<string>Wildfire</string>
+			<key>icon</key>
+			<string>creds.png</string>
+			<key>url</key>
+			<string>https://wldfire.ca</string>
+		</dict>
 
     </array>
 	<key>title</key>
